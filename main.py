@@ -1,11 +1,12 @@
 from tkinter import *
+import settings
 
 # Instantiate a "Tkinter" window instance
 root = Tk()
 # Start: Override the settings of the window
 root.configure(bg='black')    # config the bg-color of the window
 # Modify window form appearance
-root.geometry('1080x720')   # Size of the window: ('WIDTH*HEIGHT')
+root.geometry(f'{settings.WIDTH}x{settings.HEIGHT}')   # Size of the window: ('WIDTH*HEIGHT')
 root.title("Minesweeper")    # title of the window
 root.resizable(False, False)    # make window size fized (WIDTH:bool, HEIGHT:bool)
 # End: Override the settings of the window

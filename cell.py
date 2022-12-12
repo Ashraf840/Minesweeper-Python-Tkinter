@@ -23,4 +23,19 @@ class Cell:
             location,
             text='Text'
         )
+        # assign an event to btn
+        btn.bind('<Button-1>', self.left_click_action)  # left-btn-click: <Button-1>
+        btn.bind('<Button-3>', self.right_click_action)  # right-btn-click: <Button-3>
         self.cell_btn_obj = btn   # Used to place the btn-object using ".place()" method. Instead of 'place()' method, use 'grid()' when creating & placing a collectio of similar element dynamically.
+
+    # The func required to have an event-arg to be passed as and func-arg in the bind-func
+    def left_click_action(self, event):
+        print(f'Event: {event}')
+        print("I'm left-click!")
+
+    def right_click_action(self, event):
+        print(f'Event: {event}')
+        print("I'm right-click!")
+
+
+

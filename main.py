@@ -51,19 +51,32 @@ center_frame.place(x=calc_prct.width_prct(20), y=calc_prct.height_prct(25)) # ac
 # )
 # btn1.place(x=0, y=0)
 
-# Instantiate 'Cell' class; create btn-object
-c1 = Cell()
-c1.create_btn_object(location=center_frame)
-# Instead of 'palce()' method, use 'grid()' method; while palcing multiple similar object in a certain frame dynamically
-c1.cell_btn_obj.grid(
-    column=0, row=0
-)
+# # Instantiate 'Cell' class; create btn-object
+# c1 = Cell()
+# c1.create_btn_object(location=center_frame)   # Instantiate the cell-btn-obj
+# # Instead of 'palce()' method, use 'grid()' method; 
+# # while palcing multiple similar objects in a certain frame dynamically
+# c1.cell_btn_obj.grid(
+#     column=0, row=0
+# )
 
-c2 = Cell()
-c2.create_btn_object(location=center_frame)
-c2.cell_btn_obj.grid(
-    column=0, row=1
-)
+# c2 = Cell()
+# c2.create_btn_object(location=center_frame)
+# c2.cell_btn_obj.grid(
+#     column=0, row=1
+# )
+
+
+# Create cell-obj using nested for-loop (25 cells; rows & columns 5 cells each)
+for x in range(settings.GRID_SIZE):
+    for y in range(settings.GRID_SIZE):
+        c = Cell()
+        c.create_btn_object(center_frame)
+        c.cell_btn_obj.grid(
+            column=y, row=x
+        )
+
+
 
 # Code End: Inside Tkinter
 
